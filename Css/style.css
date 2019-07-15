@@ -1,0 +1,46 @@
+.fi-bg-yellow{
+    /* width:100px;
+    height: 100px; */
+    background-color: yellow;
+    /* margin: 3px; */
+}
+
+.fi-bg-greenyellow{
+    background-color: greenyellow;
+}
+
+.fi-bg-red{
+    background-color: red;
+}
+
+.fi-border-st{
+    border: 0.5px solid;
+}
+
+.fi-layout-relative {
+    position: relative;
+}
+
+.fi-layout-absolute {
+    position: absolute;
+}
+
+.fi-height-200px {
+    height: 200px;
+}
+
+.fi-height-100px {
+    height: 100px;
+}
+
+.fi-height-400px {
+    height: 400px;
+}
+
+.fi-width-200px {
+    width: 200px;
+}
+
+.fi-width-400px {
+    width: 400px;
+}
