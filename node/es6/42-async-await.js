@@ -36,6 +36,10 @@ getUser()
         console.log(friends);
     });
 
+
+// fonksiyon olarak asenkron , çağırır ve devam eder, bir alttaki console log geçer.
+// fakat fonksiyon içi await ile senkron çalışır (yukarıdaki promise tarzında)
+
 // async/await
 async function asenkronAkis () {
     const user = await getUser();
@@ -44,3 +48,5 @@ async function asenkronAkis () {
 }
 
 asenkronAkis();
+
+console.log('async-await başlatıldı...');
