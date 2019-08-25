@@ -1,9 +1,11 @@
 <html>
     <head>
         <title>Input elements</title>
+        <meta charset="UTF-8">
     </head>
     <body>
         <form action="" method="post">
+            <h3>Input Tag</h3>
             Adınız : <input type="text" /> <br><br>
             Soyadınız : <input type="text" /> <br><br>
             Yaşınız : <input type="number" /> <br><br>
@@ -11,15 +13,19 @@
             Tatil Haftanız : <input type="week" /> <br><br>
             Favori Renginiz : <input type="color" /> <br><br>
             E-posta adresiniz : <input type="email" /> <br><br>
-            <hr>
+
+            <h4>Check Box lar (input tag ile)</h4>
             Evli Misiniz? : <input type="checkbox" /> <br><br>
             Cinsiyet : <input type="radio" name="cinsiyet" /> Bay 
                     <input type="radio" name="cinsiyet" /> Bayan  <br><br>
-                    
+            <h4>Burada hidden değer var</h4>
                     <input type="hidden" value="Bir değer tutarız." />
+            <h4>Şifre Input</h4>
             Şifreniz : <input type="password" />  <br><br>
+            <h4>Dosya Seçtirme</h4>
             Profil Resminiz : <input type="file" />  <br><br>
-
+            <hr>
+            <h4>Combo Box lar (select-option tag)</h4>
             Yaşadığınız Şehir : 
             <select>
                 <option value="34" selected="selected">İstanbul</option>
@@ -39,11 +45,11 @@
             Adres Tanımınız : 
             <textarea cols="30" rows="5">Bu bir geniş metin alanıdır.</textarea> <br><br>
 
-            <hr>
+            <hr><h4>input tag i ile button</h4>
             <input type="button" value="Normal Button" /> 
             <input type="submit" value="Verileri Gönderme" /> 
             <input type="reset" value="Reset Button" />
-            <hr>
+            <hr><h4>button tag i ile button</h4>
             <button type="button">Normal Button</button>
             <button type="submit">Verileri Gönderme</button>
             <button type="reset">Reset Button</button>
