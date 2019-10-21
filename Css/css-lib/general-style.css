@@ -1,8 +1,5 @@
 .fi-bg-yellow{
-    /* width:100px;
-    height: 100px; */
     background-color: yellow;
-    /* margin: 3px; */
 }
 
 .fi-bg-greenyellow{
@@ -13,8 +10,20 @@
     background-color: red;
 }
 
+.fi-bg-dodger{
+    background-color: dodgerblue;
+}
+
+.fi-bg-lightskyblue{
+    background-color: lightskyblue;
+}
+
 .fi-border-half{
     border: 0.5px solid;
+}
+
+.fi-border-1{
+    border: 1px solid;
 }
 
 .fi-lay-relative {
@@ -41,6 +50,22 @@
     width: 200px;
 }
 
+.fi-width-300 {
+    width: 300px;
+}
+
 .fi-width-400 {
     width: 400px;
+}
+
+.fi-in-block {
+    display: inline-block;
+}
+
+.fi-height-300 {
+    height: 300px;
+}
+
+.fi-pos-fixed {
+    position: fixed;
 }

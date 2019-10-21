@@ -5,21 +5,20 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../general-style.css" rel="stylesheet">
+    <link href="../css-lib/general-style.css" rel="stylesheet">
 </head>
 
 <body>
     <br>
-    <div class="fi-layout-relative">
-        <div class="fi-bg-greenyellow fi-height-400px" id="parent">abc
+    <div class="fi-lay-relative">div:Relative
+        <div class="fi-bg-greenyellow fi-height-400">h:400
             <br>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, natus quidem. Quod dicta ducimus iusto nisi
             beatae provident consectetur voluptas laboriosam facere? Vitae repellendus voluptate iure tempore eligendi,
             laborum quasi.
 
         </div>
-        <div class="fi-bg-yellow fi-height-100px fi-layout-absolute" style="left:10px;z-index: 9999;"
-            id="abs1">abc
+        <div class="fi-bg-yellow fi-height-100 fi-lay-absolute" style="left:10px;z-index: 9999;" id="abs1">div:absolute h:100 left:10 z:9999
         </div>
     </div>
     <div class="fi-bg-red">
@@ -28,10 +27,13 @@
     </div>
 
     <br>
-    <button onclick="toggleDiv()">Toggle Div2</button>
+    <div class="fi-pos-fixed" style="bottom: 10px;right: 10px;">
+    <button onclick="toggleDiv()">Toggle Div2: Fixed pos.ed Button</button>
+    </div>
+
     <script>
         function toggleDiv() {
-            var x = document.getElementById("abs1");
+            let x = document.getElementById("abs1");
             if (x.style.display === "none") {
                 x.style.display = "block";
             } else {
