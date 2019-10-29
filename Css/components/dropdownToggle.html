@@ -100,7 +100,7 @@
             margin: -10px 0 0 30px;
         }
         .dropdown a:hover, .dropdown.toggle > label:hover, .dropdown.toggle > input:checked ~ label {
-            background-color: #EEE;
+            background-color: yellow;
             color: #666;
         }
         .dropdown > a:hover::after, .dropdown.toggle > label:hover::after, .dropdown.toggle > input:checked ~ label::after {
@@ -114,6 +114,10 @@
         }
         .dropdown.hover:hover li:first-child, .dropdown.toggle > input:checked ~ ul li:first-child {
             padding-top: 15px;
+        }
+
+        input:checked ~ label {
+            background-color: #0b2e13;
         }
     </style>
 
@@ -134,6 +138,11 @@
             </ul>
         </div>
     </nav>
+    <br><br><br><br>
+    <div>
+        <input id="t2" type="checkbox" style="display: none">
+        <label for="t2">Deneme Toggle</label>
+    </div>
         <h4>The hover menu is pure CSS.</h4>
         <h4>The toggle menu utilizes a minimal amount of javascript, but will degrade gracefully because it only uses javascript to close the menu when the user clicks outside of the menu.</h4>
         <p>
