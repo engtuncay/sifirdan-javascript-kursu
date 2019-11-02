@@ -58,6 +58,10 @@
     width: 400px;
 }
 
+.fi-width-600 {
+    width: 600px;
+}
+
 .fi-in-block {
     display: inline-block;
 }
@@ -68,4 +72,18 @@
 
 .fi-pos-fixed {
     position: fixed;
+}
+
+.fi-box-100-100 {
+    width: 100px;
+    height: 100px;
+    background-color: #afd9ee;
+    border: 1px solid;
+}
+
+.fi-box-200-200 {
+    width: 200px;
+    height: 200px;
+    background-color: #0A6187;
+    border: 1px solid;
 }
