@@ -26,16 +26,16 @@
             box-shadow: 2px 2px 5px #1b5a68;
         }
 
-        footer{
+        footer {
             clear: both;
             padding-top: 30px;
             text-align: right;
-            color:gray;
+            color: gray;
             display: none;
         }
 
         @media screen and (max-width: 600px) {
-            body{
+            body {
                 margin: 0;
                 padding: 0;
             }
@@ -46,13 +46,13 @@
                 width: 100%;
             }
 
-            .box1,.box2{
-                box-shadow:none;
+            .box1, .box2 {
+                box-shadow: none;
             }
         }
 
         @media print {
-            body{
+            body {
                 margin: 0;
                 padding: 20px 50px 20px 50px;
             }
@@ -62,12 +62,12 @@
                 width: 100%;
             }
 
-            .box1,.box2{
-                background-color: none;
-                box-shadow:none;
+            .box1, .box2 {
+                /*background-color: none;*/
+                box-shadow: none;
             }
 
-            footer{
+            footer {
                 display: block;
             }
         }
@@ -76,24 +76,26 @@
 </head>
 
 <body>
-    <div id="container">
-        <div class="row">
-            <div class="col box1">
-                <p>Nullam quis risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta gravida at eget metus. Curabitur
-                    blandit tempus porttitor. </p>
-            </div>
-            <div class="col box2">
-                <p>Nullam quis risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta gravida at eget metus. Curabitur
-                    blandit tempus porttitor. </p>
-            </div>
+
+<div id="container">
+    <div class="row">
+        <div class="col box1">
+            <p>Nullam quis risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta gravida at eget metus.
+                Curabitur
+                blandit tempus porttitor.</p>
+        </div>
+        <div class="col box2">
+            <p>Nullam quis risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta gravida at eget metus.
+                Curabitur
+                blandit tempus porttitor. </p>
         </div>
     </div>
- <footer>
-        <p>
-            Tüm hakları saklıdır. &copy; Bu belge izinsiz dağıtılamaz.
-        </p>
-    </footer>
-   
+</div>
+<footer>
+    <p>
+        Tüm hakları saklıdır. &copy; Bu belge izinsiz dağıtılamaz.
+    </p>
+</footer>
 
 </body>
 
