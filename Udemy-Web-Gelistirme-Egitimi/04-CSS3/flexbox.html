@@ -8,10 +8,14 @@
     <title>CSS3 Flexbox</title>
 
     <style>
-
+        body {
+            
+        } 
+           
         .container{
             display: flex;
-
+            height: 97vh;
+            border: #000 1px dashed;
             /* dikey eksende alt elementleri listeler */
             /* flex-direction: column; */
 
@@ -40,14 +44,14 @@
             /* justify-content: space-between; */
 
             /* her sıra içindeki elementleri dikey olarak ortalar. */
-            /* height: 500px;
-            align-items: center;
-            align-items: flex-start;
-            align-items: flex-end; */
+            /* height: 500px; */
+            /* align-items: center; */
+            /* align-items: flex-start; */
+            /* align-items: flex-end; */ 
 
             /* sıralar arasında eşit boşluk yapar ama justify gibi satıra yaymaz. */
             /* align-content: space-between; */
-            /* align-content: space-around;    /* satır etrafına eşit boşluk ekler */
+            align-content: space-around;    /* satır etrafına eşit boşluk ekler
             /* align-content: flex-start; */
             /* align-content: flex-end; */
 
@@ -81,17 +85,17 @@
 <body>
 
     <div class="container">
-        <div class="box">Lorem.</div>
-        <div class="box">Perspiciatis?</div>
-        <div class="box">Vitae.</div>
-        <div class="box">Est?</div>
-        <div class="box">Ratione?</div>
-        <div class="box">Corporis?</div>
-        <div class="box">Repudiandae!</div>
-        <div class="box">Doloremque.</div>
-        <div class="box">Corporis?</div>
-        <div class="box">Repudiandae!</div>
-        <div class="box">Doloremque.</div>
+        <div class="box">1Lorem.</div>
+        <div class="box">2Perspiciatis?</div>
+        <div class="box">3Vitae.</div>
+        <div class="box" style="height: 150px;">4Est?</div>
+        <div class="box">5Ratione?</div>
+        <div class="box">6Corporis?</div>
+        <div class="box">7Repudiandae!</div>
+        <div class="box">8Doloremque.</div>
+        <div class="box">9Corporis?</div>
+        <div class="box">10Repudiandae!</div>
+        <div class="box">11Doloremque.</div>
     </div>
 
 </body>
