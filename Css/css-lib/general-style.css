@@ -1,3 +1,20 @@
+.fi-flex {
+    display: flex;
+}
+
+.fifx-justifycontent-center {
+    justify-content: center;
+}
+
+.fifx-alignitems-center {
+    align-items: center;
+}
+
+.fi-border-dashed{
+    border: #000 1px dashed;
+}
+
+
 .fi-bg-yellow{
     background-color: yellow;
 }
@@ -70,6 +87,12 @@
     height: 300px;
 }
 
+.fi-height-97vh {
+    height: 97vh;
+}
+
+
+
 .fi-pos-fixed {
     position: fixed;
 }
@@ -87,3 +110,4 @@
     background-color: #0A6187;
     border: 1px solid;
 }
+
