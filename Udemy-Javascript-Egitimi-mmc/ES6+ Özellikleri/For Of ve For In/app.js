@@ -1,28 +1,28 @@
 const person = {
-    name:"Mustafa Murat",
+    name:"Mustafa",
     age:25,
     salary:3000
 };
 
 const langs = ["Python","Java","C++","Php"];
 
-const name = "Mustafa";
+const name = "Ahmet";
 
 // For In 
 // Object
-// for(let prop in person) {
-//     console.log(prop,person[prop]);
+for(let prop in person) {
+    console.log(prop,person[prop]);
+}
 
-// }
 // Array
-// for (let index in langs){
-//     console.log(index,langs[index]);
-// }
-// String
+for (let index in langs){
+    console.log(index,langs[index]);
+}
 
-// for (let index in name){
-//     console.log(index,name[index]);
-// }
+// String
+for (let index in name){
+    console.log(index,name[index]);
+}
 
 // Object
 

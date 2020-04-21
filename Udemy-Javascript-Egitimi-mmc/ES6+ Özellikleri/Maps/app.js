@@ -72,3 +72,6 @@ cities.set("İzmir",4);
 const array = Array.from(cities);
 // [["Ankara",5],["İstanbul",15],["İzmir",4]]
 console.log(array);
+
+
+

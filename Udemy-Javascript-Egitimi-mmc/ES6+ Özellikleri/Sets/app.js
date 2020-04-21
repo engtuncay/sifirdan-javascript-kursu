@@ -13,7 +13,7 @@ myset.add({a:1,b:2});
 const myset2 = new Set([100,3.14,"Mustafa"]);
 
 // console.log(myset);
-// console.log(myset2);
+console.log(myset2);
 
 // Size
 // console.log(myset.size);
