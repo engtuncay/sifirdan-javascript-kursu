@@ -1,7 +1,9 @@
+
+Udemy üzerindeki Vue Js kursunun kaynak kodlarıdır. Kursu öneririm. Aşağıda linkleri bulabilirsiniz.
+
 # Vue.js ile Sıfırdan Uygulama Geliştirme Eğitimi
 
 Eğitim boyunca yaptığımız uygulama ve projelere buradan erişebilirsiniz.
-
 
 ## Bağlantılar
 
