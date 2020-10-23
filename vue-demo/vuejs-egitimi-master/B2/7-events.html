@@ -11,9 +11,12 @@
     <div class="alert alert-success">
         {{ mesaj }}
     </div>
+    Button click event'ine bind yapıldı. <br>
     <button class="btn btn-sm btn-info" v-on:click="karsila">Karşıla</button>
+    v-on yerine @ de kullanabiliriz <br>
     <button class="btn btn-sm btn-danger" @click="ugurla">Uğurla</button>
     <hr>
+    Formlarda göndermeyi pasif yapmak için @submit.prevent="true" attibute'nı tanımlayabiliriz <br>
     <form @submit.prevent="true">
         <div class="form-group row">
             <label for="email" class="col-sm-3 col-form-label">Email</label>

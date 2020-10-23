@@ -33,6 +33,7 @@
         <label>
             <input type="checkbox" v-model="kullanici.secilen_roller" value="Müşteri"> Müşteri
         </label>
+            select box'u bir array'e bind edildi ve multiple attibute ile birden fazla seçilmesi sağlandı. <br>
         <select v-model="kullanici.secilen_roller" class="form-control col-4" multiple>
             <option>Yönetici</option>
             <option>Editör</option>
@@ -58,6 +59,7 @@
                 {{ sehir.text }}
             </option>
         </select>
+        pre tag örner <br>
         <pre class="form-text text-muted">{{ kullanici.dogum_yeri }}</pre>
     </form>
 </div>

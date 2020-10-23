@@ -16,11 +16,13 @@
     </select>
     <div :class="secilenStil">Merhaba</div>
     <hr>
+    div etiketinin class tanımlaması değişken üzerinden,direk atama yapıldı <br>
     <div :class="[bgBasarili, yaziBeyaz, 'jumbotron']">Merhaba</div>
     <hr>
     <div class="form-group row">
         <label for="isim" class="col-sm-2">İsim</label>
         <div class="col-sm-10">
+            Şarta bağlı olarak sınıf eklendi <br>
             <input type="text" id="isim" v-model="kullanici.isim"
                    :class="{ 'form-control is-valid': kullanici.isim, 'form-control is-invalid': !kullanici.isim }">
             <span>{{ kullanici.isim.length }} karakter</span>
