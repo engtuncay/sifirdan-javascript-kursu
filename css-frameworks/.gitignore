@@ -60,7 +60,3 @@ typings/
 # dotenv environment variables file
 .env
 
-# Custom
-.vscode/
-/HTML5Application1/nbproject/private/
-/nbproject/private/
