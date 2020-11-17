@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <img src="assets/logo.png">
+        <img src="./assets/logo.png">
         <hello msg="Welcome to Your Vue.js App"/>
         <alert-count></alert-count>
     </div>
