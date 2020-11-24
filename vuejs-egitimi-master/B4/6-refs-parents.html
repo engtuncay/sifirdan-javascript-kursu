@@ -8,6 +8,7 @@
 </head>
 <body class="p-5">
 <div id="app">
+    Parent To Child and vice versa Communication
     <parent></parent>
 </div>
 
@@ -16,8 +17,9 @@
     Vue.component('Parent', {
         template: `
             <div class="card text-white bg-secondary mb-3">
-                <div class="card-header">Parent</div>
+                <div class="card-header">Parent Component</div>
                 <div class="card-body">
+                   (this.$refs.childCompRefAttrValue) ile child objesine ulaşırız.<br>
                     <button @click="callChildMethod" class="btn btn-danger">
                         Call Child Method
                     </button>
@@ -39,6 +41,7 @@
             <div class="card text-white bg-success mb-3">
                 <div class="card-header">Child</div>
                 <div class="card-body">
+                    (this.$parent) parent objesine ulaşabiliriz. <br>
                     <button @click="callParentMethod" class="btn btn-danger">
                         Call Parent Method
                     </button>

@@ -8,6 +8,7 @@
 </head>
 <body class="p-5">
 <div id="app">
+    Child component'den Parent Comp'e iletişim kurma <br><br>
     <parent></parent>
 </div>
 
@@ -16,7 +17,7 @@
     Vue.component('Parent', {
         template: `
             <div class="card text-white bg-secondary mb-3">
-                <div class="card-header">Parent</div>
+                <div class="card-header">Parent Component</div>
                 <div class="card-body">
                     Parent Message: {{ parentMessage }}
                     <hr>
@@ -64,6 +65,7 @@
                 this.$parent.$data.parentMessage = this.childMessage;
             },
             changeParentMessage2() {
+                // parent'in onChange metodunu trigger eder, arguman olarak childMessage değerini yollar
                 this.$emit('onChange', this.childMessage);
             }
         }
