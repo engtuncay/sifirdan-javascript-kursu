@@ -43,6 +43,7 @@
         created() {
             this.$http.get('https://jsonplaceholder.typicode.com/todos')
                 .then(res => {
+                    // console.log(res);
                     this.isLoading = false;
                     this.list = res.body;
                 }, response => {
