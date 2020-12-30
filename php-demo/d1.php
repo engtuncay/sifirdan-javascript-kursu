@@ -6,5 +6,3 @@ $db = new Database();
 
 
 
-
-
