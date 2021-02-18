@@ -14,11 +14,11 @@ bg-cyan {
     display: flex;
 }
 
-.fifx-justifycontent-center {
+.fi-flex-justifycontent-center {
     justify-content: center;
 }
 
-.fifx-alignitems-center {
+.fi-flex-alignitems-center {
     align-items: center;
 }
 
