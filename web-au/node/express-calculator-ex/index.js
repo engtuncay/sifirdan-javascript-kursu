@@ -4,7 +4,7 @@ const bodyParser = require("body-parser")
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 
-// dirname
+// dirname : dosyanın bulunduğu adresi yazar D:\www\abcproj gibi
 app.get("/", (req, res) => {
     res.sendFile( __dirname + "/index.html");
 });
