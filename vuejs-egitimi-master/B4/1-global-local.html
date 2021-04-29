@@ -15,6 +15,8 @@
 
 <script src="../assets/js/vue.js"></script>
 <script>
+    // Global Component (farklı vue app'ler içerisinde kullanılabilir)
+    // comp kullanılmasa da bellege kaydedilir.(performans düşürür)
     Vue.component('AlertCount', {
         data() {
             return {
@@ -30,7 +32,8 @@
             </div>`
     });
 
-    var AlertCount2 = {
+    // Local Component
+    let AlertCount2 = {
         data() {
             return {
                 count: 0
