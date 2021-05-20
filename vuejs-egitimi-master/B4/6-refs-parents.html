@@ -19,7 +19,8 @@
             <div class="card text-white bg-secondary mb-3">
                 <div class="card-header">Parent Component</div>
                 <div class="card-body">
-                   (this.$refs.childCompRefAttrValue) ile child objesine ulaşırız.<br>
+                   (this.$refs.childRefName) ile child objesine ulaşırız.<br>
+                    <h5>Parent Count {{count}} </h5>
                     <button @click="callChildMethod" class="btn btn-danger">
                         Call Child Method
                     </button>
@@ -32,6 +33,12 @@
             },
             parentMethod() {
                 console.log('Parent method called...');
+                this.count++;
+            }
+        },
+        data() {
+            return {
+                count:1,
             }
         }
     });
@@ -39,7 +46,7 @@
     Vue.component('Child', {
         template: `
             <div class="card text-white bg-success mb-3">
-                <div class="card-header">Child</div>
+                <div class="card-header">Child Count {{count}}</div>
                 <div class="card-body">
                     (this.$parent) parent objesine ulaşabiliriz. <br>
                     <button @click="callParentMethod" class="btn btn-danger">
@@ -50,9 +57,16 @@
         methods: {
             childMethod() {
                 console.log('Child method called...');
+                this.count++;
+
             },
             callParentMethod() {
                 this.$parent.parentMethod();
+            }
+        },
+        data(){
+            return {
+                count:1,
             }
         }
     });

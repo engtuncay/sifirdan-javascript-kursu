@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="../assets/css/app.css">
 </head>
 <body class="p-5">
+<!-- App Template -->
 <div id="app">
     <div class="row">
         <card-item :item="sampleItem"></card-item>
     </div>
-    <modal></modal>
-
     <card-list :title="'Kurslar'" :cards="sampleItems"></card-list>
+    <modal></modal>
 </div>
 
 <script src="../assets/js/jquery.min.js"></script>
@@ -47,6 +47,20 @@
         }
     });
 
+    Vue.component('CardList', {
+        props: {
+            title: { type: String, required: false, default: 'Card List' },
+            cards: { type: Array, required: true, default: [] }
+        },
+        template: `
+            <div class="card-list">
+                <h2>{{ title }}</h2>
+                <div class="row">
+                    <card-item :item="card" v-for="(card, index) in cards" :key="card.title"></card-item>
+                </div>
+            </div>`
+    });
+
     Vue.component('Modal', {
         props: {
             title: {required: false, default: 'Modal Title'},
@@ -71,6 +85,7 @@
                 </div>
             </div>`,
         created() {
+            // on , listen manasında
             window.EventBus.$on('showDetailInModal', (item) => {
                 this.title = item.title;
                 this.body = item.detail;
@@ -78,19 +93,7 @@
         }
     });
 
-    Vue.component('CardList', {
-        props: {
-            title: { type: String, required: false, default: 'Card List' },
-            cards: { type: Array, required: true, default: [] }
-        },
-        template: `
-            <div class="card-list">
-                <h2>{{ title }}</h2>
-                <div class="row">
-                    <card-item :item="card" v-for="(card, index) in cards" :key="card.title"></card-item>
-                </div>
-            </div>`
-    });
+
 
     const app = new Vue({
         el: '#app',
@@ -99,8 +102,8 @@
             sampleItem: {
                 imageUrl: '../assets/img/pic2.jpg',
                 title: 'Sample Title',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-                detail: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+                description: 'This is sample item. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+                detail: 'This is the detail of sample item. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
             },
             sampleItems: [
             {
