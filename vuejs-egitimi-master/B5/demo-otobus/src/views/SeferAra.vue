@@ -1,80 +1,10 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <title>Proje - Otobüs Rezervasyon Sistemi</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/app.css">
-    <style>
-        .koltuk {
-            background: url(assets/img/koltuk-bos.svg) no-repeat;
-            background-size: contain !important;
-            display: inline-block;
-            width: 56px;
-            height: 70px;
-            line-height: 70px;
-            font-weight: bold;
-            text-align: center;
-            color: #555;
-            border: 0;
-            text-decoration: none !important;
-            cursor: pointer;
-            font-size: 20px;
-            padding-right: 5px;
-            margin: 5px 5px 5px 3px;
-        }
-
-        .koltuk-rez {
-            background: url(assets/img/koltuk-rez.svg) no-repeat;
-            color: #fff !important;
-        }
-
-        .koltuk-dolu {
-            background: url(assets/img/koltuk-dolu.svg) no-repeat;
-            color: #fff !important;
-        }
-    </style>
-</head>
-<body>
-<div id="app">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="assets/img/bus.png" width="30" height="30" class="d-inline-block align-top" alt="">
-                Otobüs Rezervasyon Sistemi
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topMenu" aria-controls="topMenu" 
-            aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="topMenu">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Anasayfa</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sefer Ara</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Koltuk Seçimi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Yolcu Bilgileri</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Ödeme Bilgileri</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<template>
     <div class="container">
         <h2>Hareket Noktaları</h2>
         <form @submit.prevent="sefer_ara">
-            <div class="form-row align-items-center">
+            <div class="row align-items-center">
                 <div class="col-sm-2">
-                    <label>Kalkış Noktası</label>
+                    <label class="">Kalkış Noktası</label>
                     <select class="form-control" v-model="kalkis_noktasi">
                         <option value="">Seçiniz</option>
                         <option v-for="item in hareket_noktalari" :value="item.id" v-text="item.aciklama"></option>
@@ -92,13 +22,15 @@
                     <input type="date" class="form-control" v-model="gidis_tarihi">
                 </div>
                 <div class="col-auto">
-                    <label>&nbsp;</label>
-                    <button type="submit" class="btn btn-primary btn-block">Ara</button>
+                    <label>&nbsp;</label><br/>
+                    <button type="submit" class="btn btn-primary">Ara</button> <!-- btn-block -->
                 </div>
             </div>
         </form>
         <hr>
+
         <div v-if="isLoading">Seferler Yükleniyor...</div>
+        {{ mesaj }}
         <div v-if="bulunan_seferler.length">
             <h2>Sefer Listesi</h2>
             <table class="table table-hover">
@@ -110,12 +42,12 @@
                         <h4>{{ item.bilet_fiyati }} ₺</h4>
                     </td>
                     <td>
-                        <button class="btn btn-success btn-sm" @click="sefer_sec(item.id)">Koltuk Seç</button>
+                        <button class="btn btn-success" @click="sefer_sec(item.id)">Koltuk Seç</button>
                     </td>
                 </tr>
             </table>
         </div>
-        <div v-if="bulunan_koltuklar.length">
+<!--        <div v-if="bulunan_koltuklar.length">
             <h2>Koltuk Seçimi</h2>
             <table class="table table-bordered text-center" style="width: inherit">
                 <tr>
@@ -192,13 +124,70 @@
                 </div>
                 <button class="btn btn-success btn-sm mt-2" @click="odeme_yap()">Ödeme Yap</button>
             </form>
-        </div>
+        </div>-->
     </div>
-</div>
+ 
+</template>
 
-<script src="assets/js/vue.js"></script>
-<script src="app.js"></script>
-<script src="assets/js/jquery.min.js "></script>
-<script src="assets/js/bootstrap.min.js"></script>
-</body>
-</html>
+<script>
+import db from '../assets/db.json';
+
+export default {
+  name: 'SeferAra',
+  props: {
+    msg: String
+  },
+  data() {
+    return {
+      kalkis_noktasi : '',
+      varis_noktasi : '',
+      gidis_tarihi : '',
+      hareket_noktalari : [],
+      seferler : [],
+      bulunan_seferler : [],
+      isLoading : false,
+      mesaj : '',
+    }
+  },
+  created() {
+    this.hareket_noktalari = db.hareket_noktalari;
+    this.seferler = db.seferler;
+  },
+  methods: {
+    sefer_ara(){ 
+        this.isLoading = true;
+        // console.log(this.seferler);
+        this.bulunan_seferler = this.seferler.filter(value =>
+            value.kalkis_noktasi === this.kalkis_noktasi &&
+            value.varis_noktasi === this.varis_noktasi &&
+            this.getTarih(value.kalkis_tarihi) === this.getTarih(this.gidis_tarihi)
+        );
+        // console.log(this.bulunan_seferler);
+        if(this.bulunan_seferler.length == 0) { 
+            this.mesaj = 'Sefer Bulunamadı !!!';
+         }else {
+             this.mesaj = '';
+         }
+        this.isLoading = false;
+    },
+    getTarih(val) {
+      var date = new Date(val);
+      var tarih = date.getFullYear() + '-' + ('0'+ date.getMonth()).slice(-2)
+            + '-' + ('0'+ date.getDay()).slice(-2);
+      return tarih;
+    },
+    getSaat(val){
+      var date = new Date(val);
+      var saat = ('0'+ date.getHours()).slice(-2)
+          + '-' + ('0'+ date.getMinutes()).slice(-2);
+      return saat;
+    },
+    sefer_sec(sefer_id){
+        this.$router.push({name:'koltuksecime',params : {sefer_id}});
+    },
+  },
+
+
+}
+
+</script>
